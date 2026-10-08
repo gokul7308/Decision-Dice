@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4eee3">
+  <title>Decision Dice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header">
+      <p class="eyebrow">A little help choosing</p>
+      <h1>🎲 Decision Dice</h1>
+      <p class="subtitle">Can't decide? Let the dice choose for you!</p>
+    </header>
+
+    <section class="choice-panel" aria-labelledby="choices-heading">
+      <h2 id="choices-heading">Your choices</h2>
+      <form class="choice-form" id="choice-form">
+        <label class="visually-hidden" for="choice-input">Enter a choice</label>
+        <input
+          id="choice-input"
+          name="choice"
+          type="text"
+          placeholder="Add something you're deciding..."
+          maxlength="120"
+          autocomplete="off"
+        >
+        <button class="button button-add" type="submit">Add Choice</button>
+      </form>
+
+      <ul class="choice-list" id="choice-list" aria-label="Added choices"></ul>
+      <p class="empty-message" id="empty-message">Your list is empty. Add a choice to get started.</p>
+
+      <div class="list-footer">
+        <span class="choice-count" id="choice-count" aria-live="polite">0 choices</span>
+        <button class="button button-text" id="clear-button" type="button">Clear All</button>
+      </div>
+    </section>
+
+    <section class="decision-panel" aria-labelledby="decision-heading">
+      <h2 class="visually-hidden" id="decision-heading">Make a decision</h2>
+      <button class="button button-decide" id="decide-button" type="button" disabled>
+        <span aria-hidden="true">🎲</span> Decide
+      </button>
+      <div class="result" id="result" aria-live="polite" aria-atomic="true">
+        <p class="result-label">🎯 Your decision</p>
+        <p class="result-value" id="result-value">The dice are waiting...</p>
+      </div>
+    </section>
+
+    <footer class="page-footer">Trust the toss. Enjoy the choice.</footer>
+  </main>
+</body>
+</html>
